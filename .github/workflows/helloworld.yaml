@@ -2,9 +2,10 @@ name: Hello world workflow
 
 on:
   workflow_dispatch:
-    inputs:
-      user_message:
-        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   hello-world:
@@ -13,7 +14,10 @@ jobs:
     steps:
       - name: Print message
         run: |
-          echo "${{github.event.inputs.user_message}}"
+          echo "Hello world"
+          Start-Sleep -Seconds 20
+          echo "Bye"
+        
 
       
     
