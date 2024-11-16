@@ -2,6 +2,9 @@ name: Hello world workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      user_message:
+        required: true
 
 jobs:
   hello-world:
@@ -10,7 +13,7 @@ jobs:
     steps:
       - name: Print message
         run: |
-          Write-Output "Hello World!"
+          echo "${{github.event.inputs.user_message}}"
 
       
     
