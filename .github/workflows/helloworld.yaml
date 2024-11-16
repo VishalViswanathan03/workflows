@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Print message
         run: |
-         echo "Hello word!"
-        shell: bash
+          Write-Output "Hello World!"
+
       
     
