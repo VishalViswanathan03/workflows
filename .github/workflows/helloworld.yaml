@@ -1,0 +1,16 @@
+name: Hello world workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: [Self-hosted,Windows,X64]
+    
+    steps:
+      - name: Print message
+        run: |
+         echo "Hello word!"
+        shell: bash
+      
+    
